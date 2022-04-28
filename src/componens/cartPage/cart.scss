@@ -1,0 +1,129 @@
+@import "../../scss/variables.scss";
+
+ 
+.cart {
+  margin: 80px 5%;
+
+      .div1 {
+          margin-left: 1%;
+          font-weight: 700;
+          font-size: 32px;
+          display: inline-flex; 
+          font-family: $titleFonts;
+          }
+
+      .div2 {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px; 
+        border-top: 3px solid $grey; 
+ 
+          .h3 {
+            color: $green;
+            font-size: 20px;
+            margin: 0 0 0 20px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 2px solid $green; 
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+  
+          img {
+            margin-right: 10px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+      }
+
+
+      .div3 {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        margin: 20px 0;
+      
+            > div:nth-child(1) {
+              margin: 0 20px;
+
+                  p:nth-child(1) {
+                    font-weight: 600;
+                    font-size: 30px;
+                    margin: 20px 0 0;
+                    font-family: $titleFonts;
+                  }
+                
+                  p:nth-child(2) {
+                    @include font(400, 30px, 27px, 20px);
+                    
+                  }
+              
+              }
+
+            > div:nth-child(2) {
+              display: flex;
+                     
+                  > div:nth-child(1) {
+                    @include flex(center, space-between);
+                    flex-direction: column;
+                    margin: 0 20px;
+                    font-weight: 500;
+                    font-size: 24px;
+
+                      span:nth-child(2) {
+                        padding: 40px 20px;
+                      }
+               
+                      .span {
+                        padding: 20px;
+                        border: 3px solid $grey;
+                      }
+                   }
+
+                  > div:nth-child(2) {
+                    @include backgroundImg(auto, 200px);
+                    margin-right: 10px;
+                    box-shadow: 0 0 3px 3px $grey;
+                    border-radius: 10px;
+                    position: relative;
+
+                    i:nth-child(1) {
+                      position: absolute;
+                      bottom: 10%;
+                      right: 50%;
+                    }
+                    i:nth-child(2) {
+                      position: absolute;
+                      bottom: 10%;
+                      right: 20%;
+                    }
+                  }
+                }
+            }    
+  
+        .div4 {
+        padding: 20px 0;
+        margin: 20px;
+        border-top: 3px solid $grey;
+        font-size: 20px;
+        line-height: 28px;
+            
+          div {
+            display: flex;
+            justify-content: space-between;
+
+           button:nth-child(1) {
+            @include button($green, $white, 279px);
+
+            }
+          button:nth-child(2) {
+            @include button($white, $black, 279px);
+            border: 2px solid $black;
+            }
+          }
+  }
+}

@@ -1,0 +1,152 @@
+// primary colors
+$white: rgb(255, 255, 255);
+$black: rgb(17, 17, 17);
+
+// secndary colors
+$green: rgb(94, 206, 123);
+$grey: rgb(238, 238, 238);
+
+//fonts
+$titleFonts: Arial, Helvetica, sans-serif;
+$bodyFonts: 'Times New Roman', Times, serif;
+
+//animations
+.animate {
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+}
+.col:hover {
+  box-shadow: 0 0 3px 3px $black;
+  transform: scale(1.02);
+}
+.btn:hover {
+  transform: scale(1.06);
+  cursor: pointer;
+}
+
+//mixins
+@mixin flex($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+@mixin ul() {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+@mixin font($weight, $size, $line, $margin) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line;
+  margin-top: $margin;
+}
+@mixin description($width) {
+  position: relative;
+  margin: 1.5%;
+  padding: 1.5%;
+  box-sizing: border-box;
+  width: $width;
+  background-color: $white;
+}
+@mixin button($bg-color, $color, $width) {
+  align-items: center;
+  padding: 16px 32px;
+  border: none;
+  color: $color;
+  background-color: $bg-color;
+  width: $width;
+  border-radius: 10px;
+  height: 52px;
+}
+@mixin backgroundImg($height, $width) {
+  border-radius: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $white;
+  height: $height;
+  width: $width;
+}
+
+//Classes
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $bodyFonts;
+}
+ a {
+   color: $black;
+    text-decoration: none;
+ }
+ .opacity {
+   opacity: 0.5;
+   pointer-events: none;
+ }
+.p {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.attribute {
+  display: flex;
+  flex-wrap: wrap;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 57px;
+      height: 45px;
+      margin: 5px 10px 10px 0;
+      border-style: groove;
+      background-color: $grey;
+      
+    }
+}
+
+.alert {
+  padding: 40px;
+  font-size: 25px;
+  background-color: $green;
+  color: $white;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  display: none;
+  border-radius: 10px;
+  z-index: 10;
+  
+  .closebtn {
+    margin-left: 30px;
+    color: $white;
+    font-weight: bold;
+    float: right;
+    font-size: 40px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}
+.arrow {
+  border: solid $black;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 5px;
+
+  &:hover {
+    border: solid rgba($black, 0.5);
+  }
+}
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}

@@ -1,0 +1,72 @@
+@import "../../scss/variables.scss";
+
+.category {
+  margin: 80px 5%;
+
+  > div:nth-child(1) {
+      margin-left: 1%;
+      font-size: 42px;
+      font-weight: 400;
+      text-transform: uppercase;
+      display: inline-flex; 
+      font-family: $titleFonts;
+  }
+
+  > div:nth-child(2) {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      .col {
+        position: relative;
+        height: 445px;
+        width: 100%;
+        background-color: $grey;
+        border-radius: 10px;
+        margin: 3% 1%;
+        padding:10px;
+        box-sizing: border-box;
+        font-size: 18px;
+        line-height: 160%;
+        
+          div {
+            @include backgroundImg(328px, 100%); 
+            @include flex(center, center);
+
+                h3 {
+                  margin: 0;
+                  font-size: 1.5rem;
+                  font-weight: bolder;
+                }
+            }
+
+           p {
+            font-weight: 300;
+            font-family: $titleFonts;
+          }
+
+          span {
+            display: flex;
+            position: absolute;
+            bottom: 95px;
+            right: 3%;
+            padding: 15px; 
+            background-color: $green;
+            border-radius: 100%;
+
+            &:hover {cursor: pointer;}
+          }
+      }
+  }
+} 
+//breakpoints
+@media screen and (min-width: 481px) {
+  .category > div:nth-child(2) .col {
+    width: 48%;
+    }
+  }
+@media screen and (min-width: 781px) {
+    .category > div:nth-child(2) .col {
+      width: 31.3%;
+      }
+    }
